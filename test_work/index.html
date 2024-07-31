@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="login-form" class="form active">
+                <h2>Авторизация</h2>
+                <div class="message" id="login-message"></div>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" required>
+                
+                <label>
+                    <input class="form__checkbox" type="checkbox" id="remember-me">
+                    Запомнить меня
+                </label>
+                
+                <button type="submit">Войти</button>
+                <button type="button" onclick="showForm('register')">Зарегистрироваться</button>
+                <button type="button" onclick="showForm('reset')">Восстановить пароль</button>
+            </form>
+
+            <form id="register-form" class="form">
+                <h2>Регистрация</h2>
+                <div class="message" id="register-message"></div>
+                <label for="register-name">Имя:</label>
+                <input type="text" id="register-name" pattern="[А-Яа-я\s]+" required>
+                
+                <label for="register-email">Email:</label>
+                <input class="input__form" type="email" id="register-email" required>
+                
+                <label for="register-password">Пароль:</label>
+                <input class="input__form" type="password" id="register-password" required>
+                
+                <label for="register-confirm-password">Подтверждение пароля:</label>
+                <input class="input__form" type="password" id="register-confirm-password" required>
+                
+                <button type="submit">Зарегистрироваться</button>
+                <button type="button" onclick="showForm('login')">Войти</button>
+                <button type="button" onclick="showForm('reset')">Восстановить пароль</button>
+            </form>
+
+            <form id="reset-form" class="form">
+                <h2>Восстановление пароля</h2>
+                <div class="message" id="reset-message"></div>
+                <label for="reset-email">Email:</label>
+                <input type="email" id="reset-email" required>
+                
+                <button type="submit">Восстановить</button>
+                <button type="button" onclick="showForm('login')">Войти</button>
+                <button type="button" onclick="showForm('register')">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
